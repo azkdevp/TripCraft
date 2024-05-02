@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripCraft</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="hero">
+        <h2>Welcome to TripCraft</h2>
+        <p>Plan your perfect trip effortlessly, tailored to your preferences.</p>
+        <a href="#tripForm" class="cta-button">Start Planning</a>
+    </div>
+    
+    <section class="travel-companion">
+        <h2>Your Ultimate Travel Companion: TripCraft</h2>
+        <p>Experience seamless travel planning and personalized recommendations tailored to your preferences with TripCraft. Our innovative platform not only provides curated travel recommendations but also offers convenient access to <strong>hotel bookings</strong>, <strong>car rentals</strong>, and more, all based on your inputs and desired region. Say goodbye to the hassle of juggling multiple websites and hello to effortless trip coordination. With TripCraft, every aspect of your journey is meticulously crafted to ensure a <strong>memorable and stress-free experience</strong>. Explore new horizons and embark on <strong>unforgettable adventures</strong> with confidence, powered by TripCraft's comprehensive travel solutions.</p>
+    </section>        
+
+    <h1>Let's Plan Your Dream Trip Together</h1>
+    <form id="tripForm" action="/generate" method="post">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required pattern="\d+" title="Age should be a number.">
+
+        <label for="interests">Interests:</label>
+        <input type="text" id="interests" name="interests" required title="Enter places or things to do (Adventure, Hiking, Relaxation & etc...)">
+
+        <label for="food">Food Preferences:</label>
+        <input type="text" id="food" name="food" required title="eg: (Halal, Vegan, Gluten Free & etc...)">
+
+        <label for="budget">Budget Range:</label>
+        <input type="text" id="budget" name="budget" required pattern="\d+-\d+" title="Please enter a valid budget range in USD (e.g., 200-300).">
+
+        <label for="duration">Trip Duration:</label>
+        <input type="text" id="duration" name="duration" required pattern="\d+" title="Duration should be a number of days.">
+
+        <label for="attendees">Number of Attendees:</label>
+        <input type="text" id="attendees" name="attendees" required pattern="\d+" title="Number of attendees should be a number.">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Response area -->
+    <div id="responseArea"></div>
+
+    <footer>
+        <p>&copy; 2024 TripCraft. By Azkhan Abdul Salam.</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>
+
+
+
+
+
